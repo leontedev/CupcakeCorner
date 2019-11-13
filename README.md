@@ -8,6 +8,17 @@
 ### Codable & @Published
 They don't play nicely (yet). So to make a class conform to Codable, which contains @Published properties, the encoding & decoding functions have to be implemented "manually".
 
+An alternative is to use a struct and wrap it in a class which conforms to ObservableObject. The class has the struct as a property and it can be @Published. This way the manual Codable implementation can be avoided:
+
+```Swift
+class Orders: ObservableObject {
+    @Published var item = Order()
+}
+
+struct Order: Codable {...} 
+```
+
+
 ### Animate multiple hidden controls at once
 In the example below, where we want to show two additional Toggles based on the status of the first Toggle. By default SwiftUI animates the other two toggles sequentially, one by one. By adding the .animation() it will animate both of them at the same time.
 
