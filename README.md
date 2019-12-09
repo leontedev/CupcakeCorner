@@ -76,4 +76,5 @@ We check the response and show an alert if an error occured. Decode the JSON res
 ### regres.in
 This is a good way to test the networking layer of an app. When you send a request, to whatever path, it will send back the same data as a response.
 
-
+## Day 76 - Accessibility Challenge
+1. The check out view in Cupcake Corner uses an image that doesn’t add anything to the UI, so find a way to make the screenreader not read it out.
